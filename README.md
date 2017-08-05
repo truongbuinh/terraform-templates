@@ -1,10 +1,8 @@
 # Terraform Templates for AWS resources
-The terraform templates are used to create the AWS resources
-Introduction to Terraform: https://www.terraform.io/intro/index.html
+The Terraform templates are used to create the AWS resources. The Terraform introduction: https://www.terraform.io/intro/index.html
 
 ## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ### Prerequisites
 - AWS account
@@ -12,7 +10,6 @@ These instructions will get you a copy of the project up and running on your loc
 - AWS IAM secret key
 - AWS region
 - AWS EC2 key pair # For SSH access
-
 
 ### Installing
 Terraform must first be installed on your machine
@@ -41,8 +38,6 @@ Common commands:
     version            Prints the Terraform version
 ```
 
-## Contributing
-
 ## Authors
-
 * **Truong Bui** - [truongbuinh](https://github.com/truongbuinh)
+Please feel free to contact me at truongbuinh@gmail.com if you have any concern.

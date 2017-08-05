@@ -9,7 +9,7 @@ resource "aws_s3_bucket" "terraform_state_s3" {
     }
 
     lifecycle {
-      prevent_destroy = true
+      prevent_destroy = false
     }
 }
 
@@ -29,7 +29,7 @@ resource "aws_dynamodb_table" "terraform_statelock" {
     }
 
     lifecycle {
-      prevent_destroy = true
+      prevent_destroy = false
     }
 
 }

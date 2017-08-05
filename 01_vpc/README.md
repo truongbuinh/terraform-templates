@@ -1,3 +1,6 @@
+# Terraform template for AWS VPC resource
+You need to check and change the vars.tf as your need.
+
 ## The below items will be created:
 - 1 S3 bucket with versioning and encryption to store terraform state
 - 1 DynamoDB table to lock the terraform state
@@ -26,7 +29,7 @@ Releasing state lock. This may take a few moments...
 ```
 ```
 terraform plan          # See the resources which will be created
-terraform apply         # Create the resources defined in .tf files
+terraform apply         # Create the resources defined in all .tf files
 terraform show          # Show the resources
 terraform plan -destroy # See what will be removed
 terraform destroy       # Remove the resources
