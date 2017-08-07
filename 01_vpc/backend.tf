@@ -6,10 +6,10 @@
 
 terraform {
     backend "s3" {
-        bucket  = "tmp-tf-state-s3" # Change your bucket name here
-        key     = "01_vpc.tfstate"
-        region  = "ap-southeast-2" # Your region
-        encrypt = "true"
+        bucket         = "tmp-tf-state-s3" # Change your bucket name here
+        key            = "01_vpc.tfstate"
+        region         = "ap-southeast-2" # Your region
+        encrypt        = "true"
         dynamodb_table = "terraform_statelock" # Your DynamoDB table with LockID
     }
 }

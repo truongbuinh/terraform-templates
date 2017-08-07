@@ -40,4 +40,4 @@ Common commands:
 
 ## Authors
 * **Truong Bui** - [truongbuinh](https://github.com/truongbuinh)
-Please feel free to contact me at truongbuinh@gmail.com if you have any concern.
+* Please feel free to contact me at **truongbuinh@gmail.com** if you have any concern.

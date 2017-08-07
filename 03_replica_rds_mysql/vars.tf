@@ -12,6 +12,17 @@ data "terraform_remote_state" "01_vpc" {
   }
 }
 
+data "terraform_remote_state" "02_simple_rds_mysql" {
+  backend = "s3"
+  config {
+    bucket = "tmp-tf-state-s3" # YOUR_BUCKET_NAME
+    key = "02_simple_rds_mysql.tfstate"
+    region = "ap-southeast-2" # Your region
+    encrypt = "true"
+    dynamodb_table = "terraform_statelock" # Your DynamoDB table with LockID
+  }
+}
+
 variable "aws_region" {
   default       = "ap-southeast-2"
   description   = "The AWS region you want to launch your services"
@@ -55,20 +66,20 @@ variable "main_db_subnet_group" {
 
 variable "aws_rds_mysql_identifier" {
   description = "Type your RDS database identifier name"
-  default     = "tf-simple-rds-mysql"  # The identifier is unique. You should change it here.
+  default     = "tf-replica-rds-mysql"  # The identifier is unique. You should change it here.
 }
 
 variable "aws_rds_mysql_dbname" {
   description = "Type your database name"
-  default     = "simplerdsmysql"
+  default     = "replicardsmysql"
 }
 
 variable "aws_rds_mysql_admin" {
   description = "Type your database admin account"
-  default     = "dbadmin"
+  default     = "dbreadadmin"
 }
 
 variable "aws_rds_mysql_password" {
   description = "Type your database admin password"
-  # default     = "adm1n2345678" # Only printable ASCII characters besides '/', '@', '"', ' ' may be used.
+  # default     = "adm1nread2345678" # Only printable ASCII characters besides '/', '@', '"', ' ' may be used.
 }
