@@ -24,4 +24,4 @@ terraform destroy       # Remove the resources
 ```
 
 ## The below items will be created:
-- 1 replication MySQL database with AWS RDS (with replication, Enable Multi-AZ)
+- 1 READ replication MySQL database with AWS RDS
