@@ -67,6 +67,6 @@ resource "aws_db_instance" "simple_rds_mysql" {
   vpc_security_group_ids   = ["${aws_security_group.aws_database_sg.id}"]
 
   tags {
-    Name      = "${var.aws_rds_mysql_dbname}"
+    Name      = "${var.aws_rds_mysql_identifier}"
   }
 }

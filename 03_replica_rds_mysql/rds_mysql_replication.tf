@@ -28,7 +28,7 @@ resource "aws_db_instance" "replica_rds_mysql" {
   apply_immediately           = ""
 
   tags {
-    Name      = "${var.aws_rds_mysql_dbname}"
+    Name      = "${var.aws_rds_mysql_identifier}"
   }
 
 }
