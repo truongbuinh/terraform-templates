@@ -23,4 +23,4 @@ terraform destroy       # Remove the resources
 ```
 
 ## The below items will be created:
-- 1 on-demand EC2 instance with Elastic IP address
+- 1 on-demand EC2 instance with an Elastic IP address

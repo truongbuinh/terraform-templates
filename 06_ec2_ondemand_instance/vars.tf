@@ -12,17 +12,6 @@ data "terraform_remote_state" "01_vpc" {
   }
 }
 
-data "terraform_remote_state" "02_simple_rds_mysql" {
-  backend = "s3"
-  config {
-    bucket = "tmp-tf-state-s3" # YOUR_BUCKET_NAME
-    key = "02_simple_rds_mysql.tfstate"
-    region = "ap-southeast-2" # Your region
-    encrypt = "true"
-    dynamodb_table = "terraform_statelock" # Your DynamoDB table with LockID
-  }
-}
-
 variable "aws_region" {
   default       = "ap-southeast-2"
   description   = "The AWS region you want to launch your services"
@@ -60,7 +49,7 @@ variable "aws_instance_sg" {
   default     = "ec2_ondemand_instance_sg"
 }
 
-# Search the latest AMI to launch NAT server
+# Search the latest AMI to launch EC2 instance
 data "aws_ami" "ec2_ondemand_instance" {
     most_recent = true
 

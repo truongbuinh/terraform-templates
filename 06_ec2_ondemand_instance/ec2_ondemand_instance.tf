@@ -42,5 +42,5 @@ resource "aws_instance" "ec2_ondemand_instance" {
 
 resource "aws_eip" "ec2_ondemand_instance_eip" {
     instance = "${aws_instance.ec2_ondemand_instance.id}"
-    vpc = true
+    vpc      = true
 }
