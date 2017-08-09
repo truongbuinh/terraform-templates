@@ -52,9 +52,13 @@ variable "aws_ec2_spot_price" {
   default     = "0.25"
 }
 
-variable "number_of_server" {
-  description = "Type number of instance you want to create"
+variable "asg_min_size" {
+  description = "The minimum number of EC2 Instances in the ASG"
   default     = "2"
+}
+variable "asg_max_size" {
+  description = "The maximum number of EC2 Instances in the ASG"
+  default     = "10"
 }
 
 variable "aws_instance_sg" {

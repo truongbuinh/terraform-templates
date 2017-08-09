@@ -83,11 +83,11 @@ resource "aws_launch_configuration" "simple_launch_conf_asg" {
 
 resource "aws_autoscaling_group" "simple_asg" {
   name                 = "${var.aws_asg_name}"
-  availability_zones   = ["${var.availability_zone["availability_zone_a"]}", "${var.availability_zone["availability_zone_b"]}"]
+  availability_zones   = ["${data.aws_availability_zones.aws_az_all.names}"]
   launch_configuration = "${aws_launch_configuration.simple_launch_conf_asg.name}"
-  min_size             = 2
-  max_size             = 10
-  desired_capacity     = 2
+  min_size             = "${var.asg_min_size}"
+  max_size             = "${var.asg_max_size}"
+  desired_capacity     = "${var.asg_min_size}"
   health_check_grace_period = 300
   health_check_type    = "EC2"
   termination_policies = ["NewestInstance"]
