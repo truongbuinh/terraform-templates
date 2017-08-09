@@ -38,6 +38,17 @@ Common commands:
     version            Prints the Terraform version
 ```
 
+## Overview
+Directory | Description
+------------ | -------------
+01_vpc | Create VPC, NAT instance
+02_simple_rds_mysql | Create a simple RDS MySQL
+03_replica_rds_mysql | Add a READ replication RDS MySQL
+06_ec2_ondemand_instance | Create a simple on-demand EC2 instance with Elastic IP in public subnets
+07_ec2_spot_instance | Create spot EC2 instance in private subnets
+08_elb_asg | Create an Elastic Load Balancer and Auto Scaling Group with EC2 spot instances
+
+
 ## Authors
 * **Truong Bui** - [truongbuinh](https://github.com/truongbuinh)
 * Please feel free to contact me at **truongbuinh@gmail.com** if you have any concern.
