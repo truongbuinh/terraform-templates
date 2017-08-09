@@ -35,6 +35,11 @@ resource "aws_instance" "ec2_ondemand_instance" {
     subnet_id               = "${data.terraform_remote_state.01_vpc.public_subnet_id_1}"
     associate_public_ip_address = true
 
+    root_block_device {
+      volume_size = 30
+      volume_type = "gp2"
+    }
+
     tags {
         Name = "ec2_ondemand_instance"
     }

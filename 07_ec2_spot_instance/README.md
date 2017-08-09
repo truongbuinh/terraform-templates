@@ -23,4 +23,5 @@ terraform destroy       # Remove the resources
 ```
 
 ## The below items will be created:
-- 1 on-demand EC2 instance (root volume size is 30GB) with an Elastic IP address
+- Multi spot EC2 instances (root volume size is 30GB) in private subnets
+- One EC2 Instance per availability zone (AZ) in the current AWS region
