@@ -1,4 +1,4 @@
-# Terraform template for AWS RDS
+# Terraform template for AWS RDS MySQL
 You need to check and change the vars.tf as your need.
 
 ## Prerequisites
@@ -14,7 +14,7 @@ https://www.terraform.io/intro/getting-started/install.html
 
 ## How it works
 ```
-terraform init          # Initialize the Terraform configuration. Store the terraform state to S3 bucket and lock it by DynamoDB
+terraform init          # Initialize the Terraform configuration
 terraform plan          # See the resources which will be created
 terraform apply         # Create the resources defined in all .tf files
 terraform show          # Show the resources

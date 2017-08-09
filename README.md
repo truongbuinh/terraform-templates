@@ -1,5 +1,6 @@
 # Terraform Templates for AWS resources
-The Terraform templates are used to create the AWS resources. The Terraform introduction: https://www.terraform.io/intro/index.html
+The Terraform templates are used to create the AWS resources.
+The Terraform introduction: https://www.terraform.io/intro/index.html
 
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
