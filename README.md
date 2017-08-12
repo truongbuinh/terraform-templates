@@ -46,7 +46,7 @@ Directory | Description
 02_simple_rds_mysql | Create a simple AWS RDS MySQL
 03_replica_rds_mysql | Add a READ replication AWS RDS MySQL
 04_simple_elasticache_redis | Create an AWS ElastiCache Redis with one server
-05_replica_elasticache_redis | Create an AWS ElastiCache Redis with one master and one replica node on each availability zone
+05_cluster_elasticache_redis | Create an AWS ElastiCache Redis with one master and one replica node on each availability zone
 06_ec2_ondemand_instance | Create a simple on-demand AWS EC2 instance with Elastic IP in public subnets
 07_ec2_spot_instance | Create spot AWS EC2 instance in private subnets
 08_elb_asg | Create an Elastic Load Balancer and Auto Scaling Group with EC2 spot instances
