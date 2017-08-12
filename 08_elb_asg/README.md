@@ -1,6 +1,8 @@
 # Terraform template for AWS Elastic Load Balancer and Auto Scaling Group
 You need to check and change the vars.tf as your need.
 
+Elastic Load Balancing automatically distributes your incoming application traffic across multiple targets, such as EC2 instances. It monitors the health of registered targets and routes traffic only to the healthy targets. Elastic Load Balancing supports two types of load balancers: Application Load Balancers and Classic Load Balancers.
+
 ## Prerequisites
 - Apply 01_vpc first
 - AWS account

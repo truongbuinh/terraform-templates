@@ -1,6 +1,9 @@
 # Terraform template for AWS VPC resource
 You need to check and change the vars.tf as your need.
 
+Amazon Virtual Private Cloud (VPC)
+Amazon Virtual Private Cloud (Amazon VPC) lets you provision a logically isolated section of the Amazon Web Services (AWS) cloud where you can launch AWS resources in a virtual network that you define. You have complete control over your virtual networking environment, including selection of your own IP address range, creation of subnets, and configuration of route tables and network gateways.  You can use both IPv4 and IPv6 in your VPC for secure and easy access to resources and applications.
+
 ## The below items will be created:
 - 1 S3 bucket with versioning and encryption to store terraform state
 - 1 DynamoDB table to lock the terraform state

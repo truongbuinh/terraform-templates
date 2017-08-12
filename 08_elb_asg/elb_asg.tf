@@ -34,7 +34,7 @@ resource "aws_security_group" "aws_elb_sg" {
 */
 resource "aws_elb" "simple_elb" {
     name            = "${var.aws_elb_name}"
-    subnets         = ["${data.terraform_remote_state.01_vpc.private_subnet_id_1}", "${data.terraform_remote_state.01_vpc.private_subnet_id_2}"]
+    subnets         = ["${data.terraform_remote_state.01_vpc.private_subnet_id_1}", "${data.terraform_remote_state.01_vpc.private_subnet_id_2}", "${data.terraform_remote_state.01_vpc.private_subnet_id_3}"]
     security_groups = ["${aws_security_group.aws_elb_sg.id}"]
 
     listener {
@@ -92,7 +92,7 @@ resource "aws_autoscaling_group" "simple_asg" {
   health_check_type    = "EC2"
   termination_policies = ["NewestInstance"]
   load_balancers       = ["${aws_elb.simple_elb.name}"]
-  vpc_zone_identifier  = ["${data.terraform_remote_state.01_vpc.private_subnet_id_1}", "${data.terraform_remote_state.01_vpc.private_subnet_id_2}"]
+  vpc_zone_identifier  = ["${data.terraform_remote_state.01_vpc.private_subnet_id_1}", "${data.terraform_remote_state.01_vpc.private_subnet_id_2}", "${data.terraform_remote_state.01_vpc.private_subnet_id_3}"]
 
   tag = {
       key                 = "Name"

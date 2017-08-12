@@ -3,20 +3,20 @@
 */
 
 resource "aws_security_group" "aws_database_sg" {
-    name = "${var.aws_database_sg}"
+    name        = "${var.aws_database_sg}"
     description = "Allow access from private subnets (terraform-managed)"
 
     ingress {
-      from_port = 3306
-      to_port = 3306
-      protocol = "tcp"
+      from_port   = 3306
+      to_port     = 3306
+      protocol    = "tcp"
       cidr_blocks = ["${data.terraform_remote_state.01_vpc.private_subnet_cidr_all}"]
     }
 
     egress {
-      from_port = 0
-      to_port = 0
-      protocol = "-1"
+      from_port   = 0
+      to_port     = 0
+      protocol    = "-1"
       cidr_blocks = ["0.0.0.0/0"]
     }
 
@@ -34,7 +34,7 @@ resource "aws_security_group" "aws_database_sg" {
 resource "aws_db_subnet_group" "main_db_subnet_group" {
   name        = "${var.main_db_subnet_group}"
   description = "RDS private subnets group (terraform-managed)"
-  subnet_ids  = ["${data.terraform_remote_state.01_vpc.private_subnet_id_1}", "${data.terraform_remote_state.01_vpc.private_subnet_id_2}"]
+  subnet_ids  = ["${data.terraform_remote_state.01_vpc.private_subnet_id_1}", "${data.terraform_remote_state.01_vpc.private_subnet_id_2}", "${data.terraform_remote_state.01_vpc.private_subnet_id_3}"]
 
   tags {
     Name      = "${var.main_db_subnet_group}"

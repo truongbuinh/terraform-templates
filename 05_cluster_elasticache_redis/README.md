@@ -1,7 +1,9 @@
-# Terraform template for AWS EC2 on-demand instance
+# Terraform template for AWS RDS MySQL
 You need to check and change the vars.tf as your need.
 
-Amazon Elastic Compute Cloud (Amazon EC2) provides scalable computing capacity in the Amazon Web Services (AWS) cloud. Using Amazon EC2 eliminates your need to invest in hardware up front, so you can develop and deploy applications faster. You can use Amazon EC2 to launch as many or as few virtual servers as you need, configure security and networking, and manage storage. Amazon EC2 enables you to scale up or down to handle changes in requirements or spikes in popularity, reducing your need to forecast traffic.
+Amazon ElastiCache is a web service that makes it easy to deploy, operate, and scale an in-memory data store or cache in the cloud. The service improves the performance of web applications by allowing you to retrieve information from fast, managed, in-memory data stores, instead of relying entirely on slower disk-based databases. Amazon ElastiCache supports two open-source in-memory engines:
+- Redis
+- Memcache
 
 ## Prerequisites
 - Apply 01_vpc first
@@ -25,4 +27,4 @@ terraform destroy       # Remove the resources
 ```
 
 ## The below items will be created:
-- 1 on-demand EC2 instance (root volume size is 30GB) with an Elastic IP address
+- 1 cluster AWS ElastiCache with 1 master node and 1 replica node on each availability zone

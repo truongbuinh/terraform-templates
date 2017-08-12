@@ -8,6 +8,7 @@ variable "availability_zone" {
     default = {
       availability_zone_a = "ap-southeast-2a"
       availability_zone_b = "ap-southeast-2b"
+      availability_zone_c = "ap-southeast-2c"
     }
 }
 
@@ -39,11 +40,12 @@ variable "public_subnet_cidr" {
     default     = {
       public_subnet_cidr_1 = "10.0.1.0/24"
       public_subnet_cidr_2 = "10.0.2.0/24"
+      public_subnet_cidr_3 = "10.0.3.0/24"
     }
 }
 
 variable "public_subnet_cidr_all" {
-    default = ["10.0.1.0/24", "10.0.2.0/24"]
+    default = ["10.0.1.0/24", "10.0.2.0/24", "10.0.3.0/24"]
 }
 
 variable "private_subnet_cidr" {
@@ -51,11 +53,12 @@ variable "private_subnet_cidr" {
     default     = {
       private_subnet_cidr_1 = "10.0.11.0/24"
       private_subnet_cidr_2 = "10.0.12.0/24"
+      private_subnet_cidr_3 = "10.0.13.0/24"
     }
 }
 
 variable "private_subnet_cidr_all" {
-    default = ["10.0.11.0/24", "10.0.12.0/24"]
+    default = ["10.0.11.0/24", "10.0.12.0/24", "10.0.13.0/24"]
 }
 
 # Search the latest AMI to launch NAT server

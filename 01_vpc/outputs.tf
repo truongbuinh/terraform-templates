@@ -18,6 +18,10 @@ output "public_subnet_id_2" {
   value = "${aws_subnet.public_subnet_cidr_2.id}"
 }
 
+output "public_subnet_id_3" {
+  value = "${aws_subnet.public_subnet_cidr_3.id}"
+}
+
 output "private_subnet_cidr_all" {
   value = "${var.private_subnet_cidr_all}"
 }
@@ -28,4 +32,8 @@ output "private_subnet_id_1" {
 
 output "private_subnet_id_2" {
   value = "${aws_subnet.private_subnet_cidr_2.id}"
+}
+
+output "private_subnet_id_3" {
+  value = "${aws_subnet.private_subnet_cidr_3.id}"
 }

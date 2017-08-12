@@ -85,6 +85,17 @@ resource "aws_subnet" "public_subnet_cidr_2" {
     }
 }
 
+resource "aws_subnet" "public_subnet_cidr_3" {
+    vpc_id = "${aws_vpc.your_test_terraform_vpc.id}"
+
+    cidr_block = "${var.public_subnet_cidr["public_subnet_cidr_3"]}"
+    availability_zone = "${var.availability_zone["availability_zone_c"]}"
+
+    tags {
+        Name = "public_subnet_az_c"
+    }
+}
+
 
 /*
 # Add Route table for Public subnets. More options in https://www.terraform.io/docs/providers/aws/r/route_table.html
@@ -116,6 +127,10 @@ resource "aws_route_table_association" "public_route_table_b" {
     route_table_id = "${aws_route_table.public_route_table.id}"
 }
 
+resource "aws_route_table_association" "public_route_table_c" {
+    subnet_id = "${aws_subnet.public_subnet_cidr_3.id}"
+    route_table_id = "${aws_route_table.public_route_table.id}"
+}
 
 /*
 # Private Subnets in AZs
@@ -139,5 +154,16 @@ resource "aws_subnet" "private_subnet_cidr_2" {
 
     tags {
         Name = "private_subnet_az_b"
+    }
+}
+
+resource "aws_subnet" "private_subnet_cidr_3" {
+    vpc_id = "${aws_vpc.your_test_terraform_vpc.id}"
+
+    cidr_block = "${var.private_subnet_cidr["private_subnet_cidr_3"]}"
+    availability_zone = "${var.availability_zone["availability_zone_c"]}"
+
+    tags {
+        Name = "private_subnet_az_c"
     }
 }

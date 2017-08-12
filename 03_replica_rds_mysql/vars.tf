@@ -33,6 +33,7 @@ variable "availability_zone" {
   default = {
     availability_zone_a = "ap-southeast-2a"
     availability_zone_b = "ap-southeast-2b"
+    availability_zone_c = "ap-southeast-2c"
   }
 }
 
