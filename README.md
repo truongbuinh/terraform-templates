@@ -50,6 +50,7 @@ Directory | Description
 06_ec2_ondemand_instance | Create a simple on-demand AWS EC2 instance with Elastic IP in public subnets
 07_ec2_spot_instance | Create spot AWS EC2 instance in private subnets
 08_elb_asg | Create an Elastic Load Balancer and Auto Scaling Group with EC2 spot instances
+10_iam_user_role | Create multiple IAM users and attach to EC2 Read-Only policy
 
 
 ## Authors
