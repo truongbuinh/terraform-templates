@@ -4,6 +4,15 @@ You need to check and change the vars.tf as your need.
 Amazon Virtual Private Cloud (VPC)
 Amazon Virtual Private Cloud (Amazon VPC) lets you provision a logically isolated section of the Amazon Web Services (AWS) cloud where you can launch AWS resources in a virtual network that you define. You have complete control over your virtual networking environment, including selection of your own IP address range, creation of subnets, and configuration of route tables and network gateways.  You can use both IPv4 and IPv6 in your VPC for secure and easy access to resources and applications.
 
+## Important notes
+- 01_vpc output is very important to the other folders. So, you have to create the VPC in 01_vpc first.
+- If you are using your own VPC, please carefully check and change the variables in vars.tf accordingly.
+
+## Steps
+1) Run ```terraform apply``` to create AWS VPC, S3 bucket and DynamoDB
+2) Comment out the code in backend.tf to initialize the backend config with ```terraform init```
+3) Run ```terraform plan``` and ```terraform apply``` again to update the output to the state file in S3 bucket
+
 ## The below items will be created:
 - 1 S3 bucket with versioning and encryption to store terraform state
 - 1 DynamoDB table to lock the terraform state
