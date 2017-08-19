@@ -1,11 +1,10 @@
-# Terraform template for AWS RDS MySQL
-You need to check and change the vars.tf as your need.
-
+# Terraform template for AWS ElastiCache - Redis
 Amazon ElastiCache is a web service that makes it easy to deploy, operate, and scale an in-memory data store or cache in the cloud. The service improves the performance of web applications by allowing you to retrieve information from fast, managed, in-memory data stores, instead of relying entirely on slower disk-based databases. Amazon ElastiCache supports two open-source in-memory engines:
 - Redis
 - Memcache
 
 ## Prerequisites
+- You need to check and change the vars.tf as your need
 - Apply 01_vpc first
 - AWS account
 - AWS IAM access key

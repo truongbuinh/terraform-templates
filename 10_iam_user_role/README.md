@@ -1,10 +1,9 @@
 # Terraform template for AWS Identity and Access Management
-You need to check and change the vars.tf as your need.
-
 AWS Identity and Access Management (IAM) is a web service that helps you securely control access to AWS resources for your users. You use IAM to control who can use your AWS resources (authentication) and what resources they can use and in what ways (authorization).
 
 
 ## Prerequisites
+- You need to check and change the vars.tf as your need
 - Apply 01_vpc first
 - AWS account
 - AWS IAM access key

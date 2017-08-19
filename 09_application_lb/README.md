@@ -1,12 +1,11 @@
 # Terraform template for AWS Application Load Balancer
-You need to check and change the vars.tf as your need.
-
 An Application Load Balancer is a load balancing option for the Elastic Load Balancing service that operates at the application layer and allows you to define routing rules based on content across multiple services or containers running on one or more Amazon Elastic Compute Cloud (Amazon EC2) instances.
 - **Content-Based Routing**: If your application is composed of several individual services, an Application Load Balancer can route a request to a service based on the content of the request.
 - **Host-based Routing**: You can route a client request based on Host field of the HTTP header allowing you to route to multiple domains from the same load balancer.
 - **Path-based Routing**: You can route a client request based on the URL path of the HTTP header.
 
 ## Prerequisites
+- You need to check and change the vars.tf as your need
 - Apply 01_vpc first
 - AWS account
 - AWS IAM access key
@@ -28,7 +27,6 @@ terraform destroy       # Destroy Terraform-managed infrastructure
 ```
 
 ## The below items will be created:
-- Multi spot EC2 instances (root volume size is 30GB) in private subnets
 - 1 Application Load Balancer
-- 1 Launch Configuration
-- 1 Auto Scaling Group
+- 1 Default target group
+- 1 Security group

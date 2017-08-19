@@ -1,9 +1,8 @@
 # Terraform template for AWS ECS
-You need to check and change the vars.tf as your need.
-
 Amazon EC2 Container Service (ECS) is a highly scalable, high performance container management service that supports Docker containers and allows you to easily run applications on a managed cluster of Amazon EC2 instances.
 
 ## Prerequisites
+- You need to check and change the vars.tf as your need
 - Apply 01_vpc first
 - AWS account
 - AWS IAM access key
