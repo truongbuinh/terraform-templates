@@ -1,7 +1,10 @@
-# Terraform template for AWS Elastic Load Balancer and Auto Scaling Group
+# Terraform template for AWS Application Load Balancer
 You need to check and change the vars.tf as your need.
 
-Elastic Load Balancing automatically distributes your incoming application traffic across multiple targets, such as EC2 instances. It monitors the health of registered targets and routes traffic only to the healthy targets. Elastic Load Balancing supports two types of load balancers: Application Load Balancers and Classic Load Balancers.
+An Application Load Balancer is a load balancing option for the Elastic Load Balancing service that operates at the application layer and allows you to define routing rules based on content across multiple services or containers running on one or more Amazon Elastic Compute Cloud (Amazon EC2) instances.
+- **Content-Based Routing**: If your application is composed of several individual services, an Application Load Balancer can route a request to a service based on the content of the request.
+- **Host-based Routing**: You can route a client request based on Host field of the HTTP header allowing you to route to multiple domains from the same load balancer.
+- **Path-based Routing**: You can route a client request based on the URL path of the HTTP header.
 
 ## Prerequisites
 - Apply 01_vpc first
@@ -26,6 +29,6 @@ terraform destroy       # Destroy Terraform-managed infrastructure
 
 ## The below items will be created:
 - Multi spot EC2 instances (root volume size is 30GB) in private subnets
-- 1 Elastic Load Balancer
+- 1 Application Load Balancer
 - 1 Launch Configuration
 - 1 Auto Scaling Group

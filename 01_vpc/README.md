@@ -40,11 +40,12 @@ Do you want to copy state from "local" to "s3"?
 Releasing state lock. This may take a few moments...
 ```
 ```
-terraform plan          # See the resources which will be created
-terraform apply         # Create the resources defined in all .tf files
-terraform show          # Show the resources
-terraform plan -destroy # See what will be removed
-terraform destroy       # Remove the resources
+terraform init          # Initialize a new or existing Terraform configuration
+terraform plan          # Generate and show an execution plan
+terraform apply         # Builds or changes infrastructure
+terraform show          # Inspect Terraform state or plan
+terraform plan -destroy # Generate and show an execution plan to check what will be removed
+terraform destroy       # Destroy Terraform-managed infrastructure
 ```
 
 If there are many team members who run the above terraform commands at the same time, they might see this error:
