@@ -4,11 +4,11 @@
 data "terraform_remote_state" "01_vpc" {
   backend = "s3"
   config {
-    bucket = "tmp-tf-state-s3" # YOUR_BUCKET_NAME
-    key = "01_vpc.tfstate"
-    region = "ap-southeast-2" # Your region
-    encrypt = "true"
-    dynamodb_table = "terraform_statelock" # Your DynamoDB table with LockID
+    bucket          = "tmp-tf-state-s3" # YOUR_BUCKET_NAME
+    key             = "01_vpc.tfstate"
+    region          = "ap-southeast-2" # Your region
+    encrypt         = "true"
+    dynamodb_table  = "terraform_statelock" # Your DynamoDB table with LockID
   }
 }
 
@@ -18,22 +18,12 @@ variable "aws_region" {
 }
 
 variable "availability_zone" {
-  type = "map"
+  type    = "map"
   default = {
     availability_zone_a = "ap-southeast-2a"
     availability_zone_b = "ap-southeast-2b"
     availability_zone_c = "ap-southeast-2c"
   }
-}
-
-# If you want to launch each server in private subnet and each availability zone, use this:
-variable "vpc_list_private_subnets_id" {
-  type = "list"
-  default = [
-    "subnet-e1cbc485",
-    "subnet-d76955a1",
-    "subnet-6c8cfe35"
-  ]
 }
 
 variable "aws_access_key" {
@@ -47,7 +37,7 @@ variable "aws_secret_key" {
 # Choose the exising AWS key pair in your AWS account
 variable "aws_key_name" {
     description = "Enter your AWS keypair name for SSH access"
-    default = "sample-keypair"
+    default     = "sample-keypair"
 }
 
 data "aws_availability_zones" "aws_az_all" {
@@ -60,18 +50,47 @@ variable "aws_instance_type" {
 
 variable "aws_ec2_spot_price" {
   description = "Type your EC2 spot price"
-  default = "0.25"
+  default     = "0.25"
 }
 
-variable "number_of_server" {
-  description = "Type number of instance you want to create"
-  default = "3"
+variable "asg_min_size" {
+  description = "The minimum number of EC2 Instances in the ASG"
+  default     = "2"
+}
+variable "asg_max_size" {
+  description = "The maximum number of EC2 Instances in the ASG"
+  default     = "10"
 }
 
 variable "aws_instance_sg" {
   description = "Type your EC2 security group name"
-  default     = "ec2_spot_instance_sg"
+  default     = "tf_ec2_instance_sg"
 }
+
+variable "aws_elb_sg" {
+  description = "Type your ELB security group name"
+  default     = "tf_app_elb_sg"
+}
+
+variable "aws_elb_name" {
+  description = "Type your ELB name"
+  default     = "tf-simple-elb"
+}
+
+variable "aws_launch_conf_name" {
+  description = "Type your AWS Launch Configuration name"
+  default     = "tf_simple_launch_conf"
+}
+
+variable "aws_asg_name" {
+  description = "Type your AWS Auto Scaling Group name"
+  default     = "tf_simple_asg"
+}
+
+# variable "aws_ssl_cert" {
+#     default     = "Your_SSL_Cert"
+#     description = "Your_SSL_Cert"
+# }
 
 # Search the latest AMI to launch EC2 instance
 data "aws_ami" "ec2_spot_instance" {
