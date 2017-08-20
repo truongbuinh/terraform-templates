@@ -52,20 +52,17 @@ variable "aws_alb_name" {
   description = "Type your AWS ALB name"
   default     = "tf-simple-alb"
 }
-
-# variable "aws_ssl_cert" {
-#     default     = "Your_SSL_Cert"
-#     description = "Your_SSL_Cert"
+/*
+# In case you want to create ALB in private subnets
+*/
+# variable "vpc_list_private_subnets_id" {
+#   type = "list"
+#   default = [
+#     "subnet-e1cbc485",
+#     "subnet-d76955a1",
+#     "subnet-6c8cfe35"
+#   ]
 # }
-
-variable "vpc_list_private_subnets_id" {
-  type = "list"
-  default = [
-    "subnet-e1cbc485",
-    "subnet-d76955a1",
-    "subnet-6c8cfe35"
-  ]
-}
 
 variable "vpc_list_public_subnets_id" {
   type = "list"
@@ -75,17 +72,6 @@ variable "vpc_list_public_subnets_id" {
     "subnet-39f28060"
   ]
 }
-
-variable "listener_port" {
-  type    = "string"
-  default = "80"
-}
-
-variable "listener_protocol" {
-  type    = "string"
-  default = "HTTP"
-}
-
 
 variable "default_target_group_port" {
   type    = "string"
@@ -99,5 +85,5 @@ variable "default_target_group_protocol" {
 
 variable "listener_certificate_arn" {
   type    = "string"
-  default = ""
+  default = "arn:aws:iam::xxxxx:server-certificate/xxxxx" # Choose an existing certificate from AWS Identity and Access Management (IAM)
 }

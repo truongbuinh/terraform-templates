@@ -11,8 +11,12 @@ output "alb_arn_suffix" {
 }
 
 # The ARN of the created Application Load Balancer Listener
-output "alb_listener_arn" {
-  value = "${aws_alb_listener.alb_listener.arn}"
+output "alb_http_listener_arn" {
+  value = "${aws_alb_listener.alb_http_listener.arn}"
+}
+
+output "alb_https_listener_arn" {
+  value = "${aws_alb_listener.alb_https_listener.arn}"
 }
 
 # The DNS name of the created Application Load Balancer.

@@ -28,5 +28,8 @@ terraform destroy       # Destroy Terraform-managed infrastructure
 
 ## The below items will be created:
 - 1 Application Load Balancer
+- 1 Security group for ALB
 - 1 Default target group
-- 1 Security group
+- 2 Listeners(HTTP and HTTPS) forward to the default target group
+- 2 Path-based Routing rules for each HTTP and HTTPS protocol
+- 1 Target group for each /app1 and /app2
