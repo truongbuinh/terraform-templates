@@ -1,6 +1,10 @@
 # Terraform Templates for AWS resources
-The Terraform templates are used to create the AWS resources.
-The Terraform introduction: https://www.terraform.io/intro/index.html
+This repo includes the terraform templates to create, update, manage and delete the AWS resources
+
+## What is Terraform?
+Terraform is a tool for building, changing, and versioning infrastructure safely and efficiently. Terraform can manage existing and popular service providers as well as custom in-house solutions.
+
+https://www.terraform.io/intro/index.html
 
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
